@@ -4,6 +4,7 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import FadeInSection from "./components/FadeInSection";
 
 import "./App.css";
 import "./styles/Global.css";
@@ -14,10 +15,10 @@ function App() {
             <div id="content">
                 <NavBar />
                 <Intro />
-                <About />
-                <Experience />
-                <Projects />
-                <Contact />
+                <FadeInSection><About /></FadeInSection>
+                <FadeInSection><Experience /></FadeInSection>
+                <FadeInSection><Projects /></FadeInSection>
+                <FadeInSection><Contact /></FadeInSection>
             </div>
         </div>
     );
