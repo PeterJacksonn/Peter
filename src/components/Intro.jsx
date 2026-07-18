@@ -4,7 +4,7 @@ import "../styles/Intro.css";
 
 function Intro() {
     return (
-        <div id="intro" className="container">
+        <div id="intro">
             <div className="name">
                 hi, I'm
                 <span style={{ color: "var(--accent)" }}> Peter.</span>

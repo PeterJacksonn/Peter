@@ -45,6 +45,8 @@
     #intro {
         padding-top: 110px;
         padding-bottom: 60px;
+        align-items: center;
+        text-align: center;
     }
 
     .name {
@@ -54,5 +56,9 @@
     .tagline {
         max-width: 100%;
         font-size: 1.15rem;
+    }
+
+    .linkedInLink {
+        align-self: center;
     }
 }
