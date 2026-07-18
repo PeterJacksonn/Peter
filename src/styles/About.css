@@ -1,0 +1,123 @@
+#about {
+    padding: 80px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-text p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-text a {
+    color: var(--accent);
+}
+
+.about-text a:hover {
+    color: var(--text);
+}
+
+.tech-stack {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 6px 72px;
+    margin-top: 12px;
+}
+
+.tech-stack li {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    padding-left: 14px;
+    position: relative;
+}
+
+.tech-stack li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.about-img-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    aspect-ratio: 1 / 1;
+    width: 75%;
+    margin-left: auto;
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.about-img-wrapper:hover .about-img {
+    transform: scale(1.03);
+}
+
+.about-highlight {
+    color: var(--text);
+    font-weight: bold;
+}
+
+.about-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.about-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 22px;
+}
+
+.card-label {
+    font-size: 0.72rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+}
+
+.card-value {
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.card-sub {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding: 60px 0;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}

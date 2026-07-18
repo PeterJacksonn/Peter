@@ -1,10 +1,10 @@
 .navbar {
-    background-color: var(--navy) !important;
-    color: var(--lightest-slate) !important;
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
     font-family: 'NTR';
     font-weight: bold;
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--lightest-navy);
+    border-bottom: 1px solid var(--border);
 }
 
 .navbar-brand {
@@ -16,12 +16,12 @@
 }
 
 .nav-link {
-    color: var(--lightest-slate) !important;
+    color: var(--text) !important;
     transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-    color: var(--green-bright) !important;
+    color: var(--accent) !important;
 }
 
 @media only screen and (max-width: 800px) {
@@ -42,6 +42,6 @@
     .nav-link:focus,
     .nav-link:active,
     .nav-link:hover {
-        color: var(--green-bright) !important;
+        color: var(--accent) !important;
     }
 }

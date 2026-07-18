@@ -1,0 +1,125 @@
+#experience {
+    padding: 80px 0;
+}
+
+.exp-timeline {
+    position: relative;
+    padding-left: 28px;
+}
+
+.exp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--border));
+    border-radius: 2px;
+}
+
+.exp-entry {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.exp-entry:last-child {
+    margin-bottom: 0;
+}
+
+.exp-entry::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 12px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--accent);
+}
+
+.exp-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    transition: border-color 0.2s ease;
+}
+
+.exp-card:hover {
+    border-color: var(--accent);
+}
+
+.exp-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.exp-role {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.exp-dates {
+    font-size: 1rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    padding-top: 3px;
+}
+
+.exp-company {
+    margin-bottom: 14px;
+}
+
+.exp-company-link {
+    font-size: 1.2rem;
+    color: var(--accent);
+    transition: color 0.2s ease;
+}
+
+.exp-company-link:hover {
+    color: var(--text);
+}
+
+.exp-description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    #experience {
+        padding: 60px 0;
+    }
+
+    .exp-timeline {
+        padding-left: 20px;
+    }
+
+    .exp-entry::before {
+        left: -25px;
+    }
+
+    .exp-card-top {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .exp-role {
+        font-size: 1.2rem;
+    }
+
+    .exp-company-link {
+        font-size: 1rem;
+    }
+
+    .exp-description {
+        font-size: 1rem;
+    }
+}

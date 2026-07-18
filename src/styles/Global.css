@@ -7,3 +7,62 @@
     --accent: #a855f7;
     --accent-2: #f43f5e;
 }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'NTR', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+[id] {
+    scroll-margin-top: 80px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent);
+}
+
+a:hover {
+    color: var(--text);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 32px;
+}
+
+.section-header::after {
+    content: '';
+    flex: 1;
+    max-width: 300px;
+    height: 1px;
+    background-color: var(--border);
+}
+
+.section-title {
+    font-family: 'NTR', sans-serif;
+    color: var(--text);
+    font-size: 2.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .section-header::after {
+        display: none;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
