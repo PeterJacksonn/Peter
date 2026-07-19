@@ -5,7 +5,7 @@ function About() {
 
     const techStack = [
         "Java",
-        "Javascript",
+        "JavaScript",
         "Python",
         "React.js"
     ];

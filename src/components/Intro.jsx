@@ -17,10 +17,14 @@ function Intro() {
                 />
             </div>
             <div className="tagline">
-                Software engineer in the UK. I build SCADA software at Ovarro and obsess
-                over my Linux config.
+                Software engineer in the UK. I build SCADA software at Ovarro and mess with my Linux config endlessly.
             </div>
-            <a href="mailto:pjacksonn03@gmail.com" className="linkedInLink">
+
+            <a href="https://linkedin.com/in/pjacksonn"
+                target="_blank"
+                rel="noreferrer"
+                className="linkedInLink"
+            >
                 <LinkedInIcon />
                 {" Lets connect!"}
             </a>

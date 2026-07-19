@@ -4,10 +4,34 @@
 
 /* ── Carousel ── */
 
+.projects-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 32px;
+}
+
+.projects-header-line {
+    flex: 1;
+    height: 1px;
+    background-color: var(--border);
+}
+
+.view-all-link {
+    font-size: 1rem;
+    color: var(--accent);
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.view-all-link:hover {
+    color: var(--text);
+}
+
 .spotlight-carousel {
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 40px;
+    margin-bottom: 0;
     border: 1px solid var(--border);
 }
 
@@ -50,15 +74,11 @@
     padding: 36px 40px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 10px;
 }
 
-.spotlight-num {
-    font-size: 0.75rem;
-    color: var(--accent);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-}
 
 .spotlight-title {
     font-size: 1.8rem;
@@ -84,16 +104,14 @@
 /* override bootstrap carousel controls to match palette */
 .spotlight-carousel .carousel-control-prev-icon,
 .spotlight-carousel .carousel-control-next-icon {
-    filter: none;
-    background-image: none;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 .spotlight-carousel .carousel-control-prev,
 .spotlight-carousel .carousel-control-next {
-    width: 48px;
-    opacity: 0.6;
+    width: 56px;
+    opacity: 0.85;
     transition: opacity 0.2s ease;
 }
 
@@ -102,16 +120,51 @@
     opacity: 1;
 }
 
-.spotlight-carousel .carousel-indicators [data-bs-target] {
-    background-color: var(--text-muted);
-    border: none;
-    width: 24px;
-    height: 3px;
-    border-radius: 2px;
+/* ── External carousel controls ── */
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 16px 0 28px;
 }
 
-.spotlight-carousel .carousel-indicators .active {
-    background-color: var(--accent);
+.carousel-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-dot {
+    width: 24px;
+    height: 3px;
+    border: none;
+    border-radius: 2px;
+    background: var(--text-muted);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease;
+}
+
+.carousel-dot.active {
+    background: var(--accent);
+}
+
+.spotlight-caption .project-tag {
+    color: var(--text);
+}
+
+.spotlight-github {
+    display: inline-flex;
+    align-items: center;
+    color: var(--accent);
+    padding: 8px;
+    margin: 4px -8px -8px;
+    transition: color 0.2s ease;
+}
+
+.spotlight-github:hover {
+    color: var(--text);
 }
 
 /* ── Small cards ── */
@@ -159,14 +212,14 @@
 }
 
 .project-icon-link {
-    color: var(--text-muted);
+    color: var(--accent);
     display: flex;
     align-items: center;
     transition: color 0.2s ease;
 }
 
 .project-icon-link:hover {
-    color: var(--accent);
+    color: var(--text);
 }
 
 .project-description {
@@ -185,7 +238,7 @@
 
 .project-tag {
     font-size: 0.8rem;
-    color: var(--accent);
+    color: var(--text);
     background: rgba(168, 85, 247, 0.1);
     border: 1px solid rgba(168, 85, 247, 0.2);
     border-radius: 4px;

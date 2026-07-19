@@ -1,5 +1,5 @@
 import fyppic from "../assets/fypmap.webp";
-import soflepic from "../assets/sofle.jpg";
+import soflepic from "../assets/sofle.webp";
 import cmspic from "../assets/cmspic.png";
 
 export const spotlightProjects = [

@@ -1,22 +1,36 @@
+import { useState } from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Carousel } from "react-bootstrap";
 import { spotlightProjects, projects } from "../data/projects";
 import "../styles/Projects.css";
+
 function Projects() {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const current = spotlightProjects[activeIndex];
+
     return (
         <section id="projects">
-            <div className="section-header">
+            <div className="projects-header">
                 <span className="section-title">projects</span>
+                <span className="projects-header-line" />
+                <a
+                    href="https://github.com/PeterJacksonn"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="view-all-link"
+                >
+                    View All →
+                </a>
             </div>
 
             <Carousel
+                activeIndex={activeIndex}
+                onSelect={setActiveIndex}
                 interval={null}
+                indicators={false}
                 className="spotlight-carousel"
-                prevIcon={<ChevronLeftIcon style={{ fontSize: 36, color: "var(--accent)" }} />}
-                nextIcon={<ChevronRightIcon style={{ fontSize: 36, color: "var(--accent)" }} />}
+
             >
                 {spotlightProjects.map((project, i) => (
                     <Carousel.Item key={project.title}>
@@ -28,7 +42,6 @@ function Projects() {
                             )}
                             <div className="spotlight-overlay" />
                             <div className="spotlight-caption">
-                                <span className="spotlight-num">0{i + 1}</span>
                                 <h3 className="spotlight-title">{project.title}</h3>
                                 <p className="spotlight-desc">{project.description}</p>
                                 <div className="project-tags">
@@ -37,23 +50,34 @@ function Projects() {
                                     ))}
                                 </div>
                                 {project.link && (
-                                    <div className="spotlight-links">
-                                        <a
-                                            href={project.link}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="project-icon-link"
-                                            aria-label="GitHub repository"
-                                        >
-                                            <GitHubIcon style={{ fontSize: 22 }} />
-                                        </a>
-                                    </div>
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="spotlight-github"
+                                        aria-label="GitHub repository"
+                                    >
+                                        <GitHubIcon style={{ fontSize: 22 }} />
+                                    </a>
                                 )}
                             </div>
                         </div>
                     </Carousel.Item>
                 ))}
             </Carousel>
+
+            <div className="carousel-controls">
+                <div className="carousel-dots">
+                    {spotlightProjects.map((_, i) => (
+                        <button
+                            key={i}
+                            className={`carousel-dot${i === activeIndex ? " active" : ""}`}
+                            onClick={() => setActiveIndex(i)}
+                            aria-label={`Go to slide ${i + 1}`}
+                        />
+                    ))}
+                </div>
+            </div>
 
             <div className="projects-grid">
                 {projects.map((project) => (
